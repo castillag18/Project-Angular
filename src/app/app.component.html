@@ -1,74 +1,50 @@
 
-<!-- Toolbar -->
-<div class="toolbar" role="banner">
-  <img
-    width="25"
-    alt="Future logo"
-    src="favicon.ico"
-  />
-  <span>FUTURE</span>
-    <div class="spacer"></div>
 
- <div class="Boton">
-  <button mat-raised-button>Sign Up</button>
-</div>
-</div>
+<form (submit)="AddUser(newuser)">
+  <input type="text" #newuser>
+  <button>
+    Send Text
+  </button>
+</form>
 
+<ul>
+  <li *ngFor="let user of users">
+    {{user}} <button (click)="DeleteUser(user)">X</button>
+  </li>
+</ul>
 
 
-<div class="content" role="main">
 
-<!--Card-->
-<mat-card class="card1" class="MatFormFieldControl">
-<!--Title Login-->
-<div class="title">
-  <h1>Future</h1>
-</div>
 
-<mat-form-field></mat-form-field>
-  <!--Form-Field-->
-<div class = "test">
-  <mat-form-field>
-    <input matInput placeholder="User" required>
-  </mat-form-field>
-
-  <mat-form-field >
-    <input matInput placeholder="Password" required>
-  </mat-form-field>
-
-  <mat-form-field></mat-form-field>
-<div class="button">
-  <button mat-raised-button>Login</button>
-</div>
-</div>
-</mat-card>
-
-<mat-form-field></mat-form-field>
-<!--Botton-->
-
-  <!--Link-->
-  <div class="card-container">
-
-    <a class="circle-link" title="Github" href="https://github.com/castillag18/" target="_blank" rel="noopener">
-      <svg alt="Github" width="21.762" height="23.447" viewBox="0 0 21.762 23.447">
-        <g id="Group_21" data-name="Group 21" transform="translate(0)">
-          <path id="Path_20" data-name="Path 20" d="M2660.313,313.618h0l-10.833,3.9,1.637,14.4,9.2,5.152,9.244-5.152,1.685-14.4Z" transform="translate(-2649.48 -313.618)" fill="#37474f"/>
-          <path id="Path_21" data-name="Path 21" d="M2741.883,313.618v23.447l9.244-5.152,1.685-14.4Z" transform="translate(-2731.05 -313.618)" fill="#263238"/>
-          <path id="Path_22" data-name="Path 22" d="M2692.293,379.169h11.724V368.618h-11.724Zm11.159-.6h-10.608v-9.345h10.621v9.345Z" transform="translate(-2687.274 -362.17)" fill="#fff"/>
-          <path id="Path_23" data-name="Path 23" d="M2709.331,393.688l.4.416,2.265-2.28-2.294-2.294-.4.4,1.893,1.893Z" transform="translate(-2702.289 -380.631)" fill="#fff"/>
-          <rect id="Rectangle_12" data-name="Rectangle 12" width="3.517" height="0.469" transform="translate(9.709 13.744)" fill="#fff"/>
-        </g>
-      </svg>
-    </a>
-
+<!-- NAV ADMIN -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav-admin">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto">
+      <li class="nav-item mr-5" style="cursor: pointer">
+        <i class="fas fa-bell mt-2" id="icon-notification"></i>
+        <span class="badge badge-primary" id="number-notification">4</span>
+      </li>
+      <li class="nav-item d-flex" routerLinkActive="active">
+        <img src="../assets/icon/man.png" width="30" height="30" alt="">
+        <a class="nav-link" routerLink="/login">Administrador</a>
+      </li>
+    </div>
   </div>
-
-  <!-- Footer -->
-  <footer>
-      Love Teslack?&nbsp;
-      <a href="https://github.com/" target="_blank" rel="noopener"> Accede a  nuestro github.
-      </a>
-      
-  </footer>
-
+</nav>
+<!-- MENU ADMIN -->
+<div class="menu-admin fixed-top">
+  
+  <div class="menu-items">
+    <ul>
+      <li><a routerLink=""><i class="fas fa-home mr-3"></i>Inicio</a></li>
+      <li><a href=""><i class="fas fa-building mr-3"></i>Nudo</a></li>
+      <li><a href=""><i class="fas fa-chart-bar mr-3"></i>Desenlace</a></li>
+      <li><a href=""><i class="fas fa-user-friends mr-3"></i>Madrid</a></li>
+    </ul>
+  </div>
+</div>
 <router-outlet></router-outlet>

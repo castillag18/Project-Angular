@@ -8,20 +8,21 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SettingComponent } from './setting/setting.component';
-import { MaterialModel} from './MaterialMode';
+import { UserComponent } from './user/user.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SignUpComponent,
-    SettingComponent
+    SettingComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    MaterialModel
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
